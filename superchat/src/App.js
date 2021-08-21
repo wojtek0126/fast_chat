@@ -10,7 +10,12 @@ import 'firebase/analytics';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
 
-import { ThemeProvider } from 'theme-ui';
+import { ThemeProvider,
+   Flex,
+   Image,
+   Button,
+   Input
+   } from 'theme-ui';
 import theme from './styles/theme';
 
 
@@ -59,7 +64,7 @@ function SignIn() {
 
   return (
     <>
-      <button className="sign-in" onClick={signInWithGoogle}>Sign in with Google</button>
+      <Button className="sign-in" onClick={signInWithGoogle}>Sign in with Google</Button>
       <p>Do not violate the community guidelines or you will be banned for life!</p>
     </>
   )
@@ -68,7 +73,7 @@ function SignIn() {
 
 function SignOut() {
   return auth.currentUser && (
-    <button className="sign-out" onClick={() => auth.signOut()}>Sign Out</button>
+    <Button className="sign-out" onClick={() => auth.signOut()}>Sign Out</Button>
   )
 }
 
@@ -100,21 +105,46 @@ function ChatRoom() {
   }
 
   return (<>
-    <main>
+  
+    <form onSubmit={sendMessage} sx={{
+        display: 'flex',
+        flexDirection: 'row',
+        maxWidth: '80vw',
+        alignItems:'center',
+        justifyContent: 'center',
+      }} >
+      <Flex>
+        <Input value={formValue} onChange={(e) => setFormValue(e.target.value)} placeholder="say something nice" 
+        sx={{
+          backgroundColor: 'inputBackground',
+          margin: '20px',
+          marginTop: '30px',
+          borderRadius: '10px'
+
+        }}
+        />
+        <Button type="submit" disabled={!formValue}
+        sx={{
+          borderRadius: '50%',
+          position: 'absolute',
+          right: '10px'
+        }}
+        >🕊️</Button>
+      </Flex>
+    </form>
+    <Flex id={'main'} sx={{
+      alignItems: 'center',
+      justifyContent: 'center',
+      flexDirection: 'column',
+      paddingTop: '2',
+      opacity: '0.85'
+    }}>
 
       {messages && messages.map(msg => <ChatMessage key={msg.id} message={msg} />)}
 
       <span ref={dummy}></span>
 
-    </main>
-
-    <form onSubmit={sendMessage}>
-
-      <input value={formValue} onChange={(e) => setFormValue(e.target.value)} placeholder="say something nice" />
-
-      <button type="submit" disabled={!formValue}>🕊️</button>
-
-    </form>
+    </Flex>
   </>)
 }
 
@@ -125,10 +155,26 @@ function ChatMessage(props) {
   const messageClass = uid === auth.currentUser.uid ? 'sent' : 'received';
 
   return (<>
-    <div className={`message ${messageClass}`}>
-      <img src={photoURL || 'https://api.adorable.io/avatars/23/abott@adorable.png'} />
+    <Flex className={`message ${messageClass}`} sx={{
+        borderRadius: '10px',
+        backgroundColor: 'messageBackground',
+        color: 'messageText',
+        width: '80vw',
+        wordBreak: 'break-word',
+        position: 'relative',    
+        margin: '30px',
+        padding: '2'  
+      }}>
+      <Image src={photoURL || 'https://api.adorable.io/avatars/23/abott@adorable.png'} sx={{
+        borderRadius: '50%',
+        width: '40px',
+        height: '40px',
+        position: 'absolute',
+        left: '-25px',
+        top: '-20px'
+      }} />
       <p>{text}</p>
-    </div>
+    </Flex>
   </>)
 }
 

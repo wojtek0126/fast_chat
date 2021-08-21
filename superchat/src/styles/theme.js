@@ -7,6 +7,9 @@ export default {
     colors: {
       text: '#000',
       background: 'gold',
+      inputBackground: '#fff',
       primary: '#33e',
+      messageBackground: 'teal',
+      messageText: '#fff'
     },
   }
