@@ -1,3 +1,4 @@
+
 import React, { useRef, useState } from 'react';
 import './App.css';
 
@@ -8,6 +9,10 @@ import 'firebase/analytics';
 
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
+
+import { ThemeProvider } from 'theme-ui';
+import theme from './styles/theme';
+
 
 firebase.initializeApp({
   apiKey: "AIzaSyCn4sCjhmPTpljpeHRigEUIhuHWLKhf-cQ",
@@ -29,17 +34,19 @@ function App() {
   const [user] = useAuthState(auth);
 
   return (
-    <div className="App">
-      <header>
-        <h1>⚛️🔥💬</h1>
-        <SignOut />
-      </header>
+    <ThemeProvider theme={theme}>
+      <div className="App">
+        <header>
+          <h1>⚛️🔥💬</h1>
+          <SignOut />
+        </header>
 
-      <section>
-        {user ? <ChatRoom /> : <SignIn />}
-      </section>
+        <section>
+          {user ? <ChatRoom /> : <SignIn />}
+        </section>
 
-    </div>
+      </div>
+    </ThemeProvider>
   );
 }
 
