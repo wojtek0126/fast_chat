@@ -66,7 +66,7 @@ function SignIn() {
   return (
     <>
       <Button className="sign-in" onClick={signInWithGoogle}>Sign in with Google</Button>
-      <p>A simply messenger</p>
+      <p>This is my personal chat. Happy chat</p>
     </>
   )
 
@@ -166,7 +166,7 @@ function ChatMessage(props) {
         position: 'relative',    
         margin: '30px',
         padding: '2', 
-        marginBottom: '100px' 
+        marginBottom: '70px' 
       }}>
       <Image src={photoURL || 'https://api.adorable.io/avatars/23/abott@adorable.png'} sx={{
         borderRadius: '50%',
