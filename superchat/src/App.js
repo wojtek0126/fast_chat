@@ -14,7 +14,7 @@ import { ThemeProvider,
    Flex,
    Image,
    Button,
-   Input
+   Input,
    } from 'theme-ui';
 import theme from './styles/theme';
 
@@ -41,11 +41,12 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <div className="App">
+        
         <header>
           <h1>⚛️🔥💬</h1>
           <SignOut />
         </header>
-
+  
         <section>
           {user ? <ChatRoom /> : <SignIn />}
         </section>
@@ -65,7 +66,7 @@ function SignIn() {
   return (
     <>
       <Button className="sign-in" onClick={signInWithGoogle}>Sign in with Google</Button>
-      <p>Do not violate the community guidelines or you will be banned for life!</p>
+      <p>A simply messenger</p>
     </>
   )
 
@@ -104,34 +105,7 @@ function ChatRoom() {
     dummy.current.scrollIntoView({ behavior: 'smooth' });
   }
 
-  return (<>
-  
-    <form onSubmit={sendMessage} sx={{
-        display: 'flex',
-        flexDirection: 'row',
-        maxWidth: '80vw',
-        alignItems:'center',
-        justifyContent: 'center',
-      }} >
-      <Flex>
-        <Input value={formValue} onChange={(e) => setFormValue(e.target.value)} placeholder="say something nice" 
-        sx={{
-          backgroundColor: 'inputBackground',
-          margin: '20px',
-          marginTop: '30px',
-          borderRadius: '10px'
-
-        }}
-        />
-        <Button type="submit" disabled={!formValue}
-        sx={{
-          borderRadius: '50%',
-          position: 'absolute',
-          right: '10px'
-        }}
-        >🕊️</Button>
-      </Flex>
-    </form>
+  return (<>   
     <Flex id={'main'} sx={{
       alignItems: 'center',
       justifyContent: 'center',
@@ -145,6 +119,34 @@ function ChatRoom() {
       <span ref={dummy}></span>
 
     </Flex>
+    <form className='form' onSubmit={sendMessage} >
+      <Flex  sx={{
+        justifyContent: 'center',
+        alignItems: 'center',
+        width: '100%',
+        height: 100,
+        marginTop: '3',        
+        position: 'fixed',
+        left: 0,
+        bottom: 0
+      }}>
+        <Input value={formValue} onChange={(e) => setFormValue(e.target.value)} placeholder="your message..." 
+        sx={{
+          backgroundColor: 'inputBackground',
+          margin: '20px',
+          marginTop: '30px',
+          borderRadius: '10px'
+        }}
+        />
+        <Button type="submit" disabled={!formValue}
+        sx={{
+          borderRadius: '50%',
+          position: 'absolute',
+          right: '10px'
+        }}
+        >🕊️</Button>
+      </Flex>
+    </form>    
   </>)
 }
 
@@ -155,15 +157,16 @@ function ChatMessage(props) {
   const messageClass = uid === auth.currentUser.uid ? 'sent' : 'received';
 
   return (<>
-    <Flex className={`message ${messageClass}`} sx={{
+    <Flex sx={{
         borderRadius: '10px',
-        backgroundColor: 'messageBackground',
+        backgroundColor: `${messageClass}`,
         color: 'messageText',
         width: '80vw',
         wordBreak: 'break-word',
         position: 'relative',    
         margin: '30px',
-        padding: '2'  
+        padding: '2', 
+        marginBottom: '100px' 
       }}>
       <Image src={photoURL || 'https://api.adorable.io/avatars/23/abott@adorable.png'} sx={{
         borderRadius: '50%',

@@ -9,7 +9,8 @@ export default {
       background: 'gold',
       inputBackground: '#fff',
       primary: '#33e',
-      messageBackground: 'teal',
+      sent: 'teal',
+      received: '#000',
       messageText: '#fff'
     },
   }
