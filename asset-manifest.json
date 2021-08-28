@@ -1,23 +1,22 @@
 {
   "files": {
     "main.css": "/fast_chat/static/css/main.a617e044.chunk.css",
-    "main.js": "/fast_chat/static/js/main.2838f4e3.chunk.js",
-    "main.js.map": "/fast_chat/static/js/main.2838f4e3.chunk.js.map",
+    "main.js": "/fast_chat/static/js/main.113b6ca9.chunk.js",
+    "main.js.map": "/fast_chat/static/js/main.113b6ca9.chunk.js.map",
     "runtime-main.js": "/fast_chat/static/js/runtime-main.18851b56.js",
     "runtime-main.js.map": "/fast_chat/static/js/runtime-main.18851b56.js.map",
-    "static/js/2.c8e57bdf.chunk.js": "/fast_chat/static/js/2.c8e57bdf.chunk.js",
-    "static/js/2.c8e57bdf.chunk.js.map": "/fast_chat/static/js/2.c8e57bdf.chunk.js.map",
+    "static/js/2.8681d72a.chunk.js": "/fast_chat/static/js/2.8681d72a.chunk.js",
+    "static/js/2.8681d72a.chunk.js.map": "/fast_chat/static/js/2.8681d72a.chunk.js.map",
     "static/js/3.865a3e42.chunk.js": "/fast_chat/static/js/3.865a3e42.chunk.js",
     "static/js/3.865a3e42.chunk.js.map": "/fast_chat/static/js/3.865a3e42.chunk.js.map",
     "index.html": "/fast_chat/index.html",
     "static/css/main.a617e044.chunk.css.map": "/fast_chat/static/css/main.a617e044.chunk.css.map",
-    "static/js/2.c8e57bdf.chunk.js.LICENSE.txt": "/fast_chat/static/js/2.c8e57bdf.chunk.js.LICENSE.txt",
-    "static/media/bubbles777.0e612f76.jpg": "/fast_chat/static/media/bubbles777.0e612f76.jpg"
+    "static/js/2.8681d72a.chunk.js.LICENSE.txt": "/fast_chat/static/js/2.8681d72a.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.18851b56.js",
-    "static/js/2.c8e57bdf.chunk.js",
+    "static/js/2.8681d72a.chunk.js",
     "static/css/main.a617e044.chunk.css",
-    "static/js/main.2838f4e3.chunk.js"
+    "static/js/main.113b6ca9.chunk.js"
   ]
 }
