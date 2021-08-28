@@ -16,11 +16,12 @@ import { ThemeProvider,
    Image,
    Button,
    Input,    
-   Paragraph
+   Paragraph,
+   Heading
    } from 'theme-ui';   
 import theme from './styles/theme';
 
-import background from './assets/bubbles777.jpg'
+import background from './assets/1035.png'
 
 import { btnPrimary } from './styles/settings';
 
@@ -51,7 +52,12 @@ function App() {
       }} className="App">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#0099ff" fill-opacity="0.8" d={`M0,192L15,197.3C30,203,60,213,90,213.3C120,213,150,203,180,192C210,181,240,171,270,154.7C300,139,330,117,360,144C390,171,420,245,450,234.7C480,224,510,128,540,74.7C570,21,600,11,630,37.3C660,64,690,128,720,181.3C750,235,780,277,810,288C840,299,870,277,900,245.3C930,213,960,171,990,170.7C1020,171,1050,213,1080,224C1110,235,1140,213,1170,170.7C1200,128,1230,64,1260,48C1290,32,1320,64,1350,85.3C1380,107,1410,117,1425,122.7L1440,128L1440,0L1425,0C1410,0,1380,0,1350,0C1320,0,1290,0,1260,0C1230,0,1200,0,1170,0C1140,0,1110,0,1080,0C1050,0,1020,0,990,0C960,0,930,0,900,0C870,0,840,0,810,0C780,0,750,0,720,0C690,0,660,0,630,0C600,0,570,0,540,0C510,0,480,0,450,0C420,0,390,0,360,0C330,0,300,0,270,0C240,0,210,0,180,0C150,0,120,0,90,0C60,0,30,0,15,0L0,0Z`}></path></svg>      
         <header>
-          <h1>The Eazzy Chat</h1>
+          <Heading sx={{
+            textShadow: '-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000',
+            color: 'text2',
+            marginTop: 20,
+            marginBottom: 20      
+            }}>The Eazzy Chat</Heading>
           <SignOut />
         </header>
   
@@ -75,7 +81,11 @@ function SignIn() {
     <>
       <Button className="sign-in" onClick={signInWithGoogle} sx={btnPrimary}>Sign in with Google</Button>
       <Paragraph sx={{
-        fontWeight: '600'
+        color: 'text2',
+        fontWeight: '600',
+        textShadow: '-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000',
+        marginTop: 20,
+        marginBottom: 20 
         }}>This is my personal chat. Happy chat</Paragraph>
     </>
   )
