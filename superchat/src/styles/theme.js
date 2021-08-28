@@ -13,4 +13,16 @@ export default {
       received: '#000',
       messageText: '#fff'
     },
+    images: {
+        avatar: {
+          width: 48,
+          height: 48,
+          borderRadius: 99999,
+        },
+        background: {
+            width: '100%',
+            height: '100%',
+            backgroundRepeat: 'repeat'
+          },
+      }
   }
