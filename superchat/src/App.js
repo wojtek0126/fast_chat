@@ -188,7 +188,7 @@ function ChatRoom() {
         marginTop: '3',        
         position: 'fixed',
         left: 0,
-        bottom: 0
+        bottom: 0   
       }}>
         <Input value={formValue} onChange={(e) => setFormValue(e.target.value)} placeholder="your message..." 
         sx={{
@@ -196,7 +196,14 @@ function ChatRoom() {
           margin: '20px',
           marginTop: '30px',
           borderRadius: '10px',
-          marginLeft: 77
+          marginLeft: 77,
+          "@media (max-width: 500px)": { 
+            width: '70vw',     
+            marginLeft: 50,
+            marginRight: 50,
+            height: 50,
+            marginBottom: 26           
+         }
         }}
         />
          <Flex sx={{        
@@ -220,7 +227,14 @@ function ChatRoom() {
             textDecoration: 'none'
          },
          paddingRight: 60,
-         marginRight: 67
+         marginRight: 67,
+         "@media (max-width: 500px)": { 
+           position: 'absolute',         
+           marginRight: 0,
+           right: 0,
+           bottom: 12,
+           padding: 15
+        }
         }}
         >🕊️</Button>
     </Flex>
