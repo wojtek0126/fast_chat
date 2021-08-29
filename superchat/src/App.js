@@ -122,8 +122,8 @@ function SignIn() {
             }}> 
               <ScrollText>
                 This is my personal chat made with React.js and several of it's libraries. Feel free to sign in and type in whatever You want.
-                This app is evolving so next time around it will most likely look and work different. The code and file structure
-                will also be getting improved. Right now this chat is free for anyone to test. Maximum number of comments is currently
+                This app is evolving so next time around it will most likely look and work different. Also the code and file structure
+                will be improved. Right now this chat is free for anyone to test, however maximum number of comments is currently
                 set to 50...have fun!                 
               </ScrollText>         
           </Heading>  
