@@ -230,7 +230,7 @@ function ChatRoom() {
          marginRight: 67,
          "@media (max-width: 500px)": { 
            position: 'absolute',         
-           marginRight: 0,
+           marginRight: 4,
            right: 0,
            bottom: 12,
            padding: 15
@@ -248,7 +248,8 @@ function ChatRoom() {
         style={{
           backgroundImage:'linear-gradient(to right, #232526 0%, #414345  51%, #232526  100%)',
           cursor: 'pointer',
-          margin: '10px',          
+          margin: '10px',  
+          border: 'none',         
           textAlign: 'center',
           textTransform: 'uppercase',
           transition: '0.5s',
@@ -263,10 +264,7 @@ function ChatRoom() {
          },
          position: 'fixed',
          bottom: 12,
-         left: 0,
-         width: 20,
-         height: 52,
-         paddingRight: 23,
+         left: 0,     
          zIndex: '15'
         }}
         className="scroll-your-role"
