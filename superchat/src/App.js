@@ -231,9 +231,10 @@ function ChatRoom() {
          "@media (max-width: 500px)": { 
            position: 'absolute',         
            marginRight: 4,
-           right: 0,
+           right: -25,
            bottom: 12,
-           padding: 15
+           padding: 15,
+           height: 50
         }
         }}
         >🕊️</Button>
@@ -265,7 +266,8 @@ function ChatRoom() {
          position: 'fixed',
          bottom: 12,
          left: 0,     
-         zIndex: '15'
+         zIndex: '15',
+         height: 50
         }}
         className="scroll-your-role"
         speed={1000}
