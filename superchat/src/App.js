@@ -142,26 +142,32 @@ function SignOut() {
 function ChatRoom() {
   const dummy = useRef();
   const messagesRef = firestore.collection('messages');
-  const query = messagesRef.orderBy('createdAt').limit(100);
+  const query = messagesRef.orderBy('createdAt').limit(200);
 
   const [messages] = useCollectionData(query, { idField: 'id' });
 
   const [formValue, setFormValue] = useState('');
+
+  // const [placeholder, setPlaceholder] = useState('your message...');
+
 
 
   const sendMessage = async (e) => {
     e.preventDefault();
 
     const { uid, photoURL } = auth.currentUser;
+    
+    if (formValue.length > 2 || formValue.length >= 500) {
+      await messagesRef.add({
+        text: formValue,
+        createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+        uid,
+        photoURL
+      })      
+      setFormValue("");
+    };
 
-    await messagesRef.add({
-      text: formValue,
-      createdAt: firebase.firestore.FieldValue.serverTimestamp(),
-      uid,
-      photoURL
-    })
-
-    setFormValue('');
+    
     dummy.current.scrollIntoView({ behavior: 'smooth' });
   }
 
@@ -190,7 +196,7 @@ function ChatRoom() {
         left: 0,
         bottom: 0   
       }}>
-        <Input value={formValue} onChange={(e) => setFormValue(e.target.value)} placeholder="your message..." 
+        <Input defaultValue={formValue} onChange={(e) => setFormValue(e.target.value)} placeholder='your message...' 
         sx={{
           backgroundColor: 'inputBackground',
           margin: '20px',
@@ -303,7 +309,7 @@ function ChatMessage(props) {
         left: '-25px',
         top: '-20px'
       }} />
-      <p>{text}</p>
+      <Paragraph>{text}</Paragraph>
     </Flex>
   </>)
 }
